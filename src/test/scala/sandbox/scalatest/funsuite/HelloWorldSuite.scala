@@ -1,11 +1,11 @@
 package sandbox.scalatest.funsuite
 
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Matchers}
 
-class HelloWorldSuite extends FunSuite {
+class HelloWorldSuite extends FunSuite with Matchers {
 
   test("testSayHello") {
-    assert(HelloWorld.sayHello("World") == "Hello World!!")
+    HelloWorld.sayHello("World") should equal ("Hello World!!")
   }
 
 }

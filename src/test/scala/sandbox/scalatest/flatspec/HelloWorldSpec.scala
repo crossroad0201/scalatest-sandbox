@@ -1,13 +1,13 @@
 package sandbox.scalatest.flatspec
 
-import org.scalatest.FlatSpec
+import org.scalatest.{FlatSpec, Matchers}
 
-class HelloWorldSpec extends FlatSpec {
+class HelloWorldSpec extends FlatSpec with Matchers {
 
   behavior of "HelloWorld"
 
   it should "sayHello" in {
-    assert(HelloWorld.sayHello("World") == "Hello World!!")
+    HelloWorld.sayHello("World") should equal ("Hello World!!")
   }
 
 }
